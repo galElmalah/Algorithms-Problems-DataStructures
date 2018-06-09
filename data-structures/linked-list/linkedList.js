@@ -16,15 +16,24 @@ class LinkedList{
     if(!this.head){
       this.head = new Node(items[0]);
       this.tail = this.head;
-      if(items.length > 1){
-        items.splice(0,1);
-      } 
+      items.splice(0,1);
     }
     items.forEach((item) =>{
       this.tail.next = new Node(item);
       this.tail = this.tail.next;
     });
     return this;
+  }
+
+  find(value, compareFunction = (a,b) => a === b ){
+    let tmp = this.head;
+    while(tmp !== null){
+      if(compareFunction(tmp.data, value)){
+        return tmp;
+      }
+      tmp = tmp.next;
+    }
+    return null;
   }
     
   deleteByValue(val){
@@ -88,7 +97,7 @@ class LinkedList{
   }
 
   isEmpty(){
-    return this.head;
+    return this.head !== null;
   }
 }
 
