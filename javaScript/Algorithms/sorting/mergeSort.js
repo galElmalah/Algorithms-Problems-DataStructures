@@ -1,4 +1,4 @@
-const merge = (arr1, arr2) => {
+module.exports.merge = function merge(arr1, arr2) {
   let merged = [];
   let arr1Index = 0;
   let arr2Index = 0;
@@ -20,14 +20,13 @@ const merge = (arr1, arr2) => {
   return merged;
 }
 
-const mergeSort = arr => {
-  if (arr.length == 1) return arr;
+module.exports.mergeSort = (arr) => {
+  if (arr.length == 1 || arr.length == 0) return arr;
   const mid = parseInt(arr.length / 2);
-  let left = mergeSort(arr.slice(0, mid));
-  let right = mergeSort(arr.slice(mid));
+  let left = this.mergeSort(arr.slice(0, mid));
+  let right = this.mergeSort(arr.slice(mid));
 
-  return merge(left, right);
+  return this.merge(left, right);
 }
-
 
 

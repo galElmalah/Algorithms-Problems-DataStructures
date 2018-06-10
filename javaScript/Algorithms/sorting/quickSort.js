@@ -1,5 +1,5 @@
 module.exports = function quickSort(arr, ascending = true) {
-  if (arr.length == 0) return arr;
+  if (arr.length == 0 || arr.length == 1) return arr;
   let pivot = [arr[Math.floor(Math.random() * arr.length)]];
   let smaller = [];
   let bigger = [];

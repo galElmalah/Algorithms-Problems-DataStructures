@@ -6,10 +6,11 @@ module.exports = {
     }
     return arr;
   },
-  isSorted(arr, compareFunction = (a,b) => a < b){
+  isSorted(arr, compareFunction = (a,b) => a <= b){
     for(let i = 0; i < arr.length -1; i++){
       if(!compareFunction(arr[i],arr[i+1])){
         return false;
+        console.log(arr, );
       }
     }
     return true
