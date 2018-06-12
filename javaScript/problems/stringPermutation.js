@@ -21,7 +21,3 @@ function stringPermutation(str) {
   }
   return arr
 }
-
-const input = 'abc'
-let res = stringPermutation(input)
-console.log(res, res.length);

@@ -40,6 +40,9 @@ class LinkedList{
     let tmp = this.head;
     let prev;
     // if its the head
+    if(this.head === null || val === undefined){
+      return false;
+    }
     if (tmp.data === val){
       this.head = tmp.next;
       return true;
@@ -53,11 +56,7 @@ class LinkedList{
       
       tmp = tmp.next;
     }
-    //if its the tail
-    if(tmp.data === val){
-      prev.next = tmp.next;
-      return true;
-    }
+    
     return false;
   }
 
@@ -82,7 +81,7 @@ class LinkedList{
       prev = current;
       current = next;
     }
-    this.head =prev;
+    this.head = prev;
   }
 
   shift(){
@@ -97,7 +96,7 @@ class LinkedList{
   }
 
   isEmpty(){
-    return this.head !== null;
+    return this.head === null;
   }
 }
 
